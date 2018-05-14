@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 
- * @author mark
+ * @author 
  * @since 2018-05-14
  */
 public class UrlExtractor {
@@ -30,7 +30,7 @@ public class UrlExtractor {
     public JSONObject parse(String url) {
     	return parse(url, 0);
     }
-    public JSONObject parse(String url, int depth) {
+    private JSONObject parse(String url, int depth) {
     	LOG.debug("url: " + url + ", depth: " + depth);
     	JSONObject obj = new JSONObject();
     	obj.put("url", url);
