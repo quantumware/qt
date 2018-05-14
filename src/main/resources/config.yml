@@ -1,0 +1,26 @@
+appName: qt
+
+# https://github.com/dropwizard/dropwizard/blob/master/dropwizard-example/example.yml
+server:
+  applicationConnectors:
+    - type: http
+      port: 9080
+  adminConnectors:
+    - type: http
+      port: 9081
+
+
+logging:
+  level: WARN
+  loggers:
+    "labs.java.qt.resources": DEBUG
+  appenders:
+    - type: console
+      logFormat: "%d{HH:mm:ss.SSS} [%thread] %-5level %c{50}:%M:%L - %msg%n"
+    - type: file
+      currentLogFilename: ./logs/qt.log
+      threshold: DEBUG
+      archive: true
+      archivedLogFilenamePattern: ./logs/qt-%d.log
+      archivedFileCount: 5
+      timeZone: UTC
